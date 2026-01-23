@@ -119,7 +119,7 @@ const About: React.FC = memo(() => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50/50 md:hidden" />
 
             <img
-              src="../images/home.png"
+              src="/home.png"
               alt="Portrait"
               loading="eager"
               decoding="async"
