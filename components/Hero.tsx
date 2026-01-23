@@ -246,7 +246,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                             <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#F3F5FA] via-[#F3F5FA]/80 to-transparent opacity-[0.7] z-30"></div>
 
                             <img
-                                src="../images/home.webp"
+                                src="/home.webp"
                                 alt="Portrait"
                                 loading="eager"
                                 decoding="async"
