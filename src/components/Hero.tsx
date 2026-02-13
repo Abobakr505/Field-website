@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, memo } from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Download, Mail } from 'lucide-react';
 import { ShimmerButton } from './ShimmerButton';
 import { motion } from 'framer-motion';
 
@@ -146,7 +146,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className="block mb-1 font-display font-bold"
                         >
-                            Hi, I'm Dina.
+                            Hi, I'm Ahmed .
                             <motion.span
                                 initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: 1 }}
@@ -162,7 +162,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                             className="text-black pt-2 sm:pt-2"
                         >
-                            <span className="font-display font-bold">A Field Application </span>
+                            <span className="font-display font-bold">A Architect & </span>
                             <span className="relative inline-flex items-center">
                                 <span className="relative inline-block px-2">
                                     <svg
@@ -183,7 +183,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                                     </svg>
 
                                     <span className="font-designer font-normal text-gray-900 relative">
-                                        Specialist
+                                        3D Visualiser 
                                     </span>
 
                                     <span
@@ -205,8 +205,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                         className="text-gray-500 text-xs sm:text-sm md:text-base max-w-[90%] md:max-w-4xl mx-auto mb-6 mt-2 leading-relaxed font-medium tracking-wide px-4"
                     >
 
-                    Senior sales & field application pathology department at analysis company 
-                    Chemist at maadi armed forces hospital
+A reliable and precise professional driven by passion, backed by solid experience, and committed to delivering excellence.
                     </motion.p>
 
                     <motion.div
@@ -227,10 +226,10 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
 
                         <div className="relative inline-flex overflow-hidden rounded-full p-[1px]">
                             <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#06b6d4_0%,#10b981_33%,#f59e0b_66%,#06b6d4_100%)]" />
-                            <button className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white/90 px-6 py-2.5 text-sm font-bold text-gray-800 backdrop-blur-3xl hover:bg-white transition-all gap-2">
-                                <Mail size={18} className="text-black" />
-                                Hire Me
-                            </button>
+                            <a className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white/90 px-6 py-2.5 text-sm font-bold text-gray-800 backdrop-blur-3xl hover:bg-white transition-all gap-2">
+                                <Download size={18} className="text-black" />
+                                Download CV
+                            </a>
                         </div>
                     </motion.div>
                 </div>
@@ -246,7 +245,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                             <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#F3F5FA] via-[#F3F5FA]/80 to-transparent opacity-[0.7] z-30"></div>
 
                             <img
-                                src="/home.webp"
+                                src="/home.png"
                                 alt="Portrait"
                                 loading="eager"
                                 decoding="async"

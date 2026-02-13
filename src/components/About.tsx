@@ -57,15 +57,22 @@ const About: React.FC = memo(() => {
             </h2>
           </motion.div>
 
-        <motion.div variants={itemVariants} className="prose prose-lg text-gray-600 mb-6 md:mb-6">
-          <p className="text-lg md:text-xl leading-relaxed font-medium text-gray-800 mb-4 md:mb-4">
-            I'm a Dina Ashraf ,  Field Application Specialist with hands-on experience in pathology and diagnostic laboratories, where <span className="bg-yellow-100 px-1 rounded-md text-yellow-900">accuracy</span> drives every decision and <span className="bg-blue-50 px-1 rounded-md text-blue-900">reliability</span> shapes every result.
-          </p>
+<motion.div variants={itemVariants} className="prose prose-lg text-gray-600 mb-6 md:mb-6">
+  <p className="text-lg md:text-xl leading-relaxed font-medium text-gray-800 mb-4 md:mb-4">
+    I'm Ahmed Khaled, an architect who is constantly seeking to give to and learn from my field of profession.
+    I aim to bring architecture to a new level of 
+    <span className="bg-yellow-100 px-1 rounded-md text-yellow-900">creativity</span> 
+    accompanied by the perfect balance of 
+    <span className="bg-blue-50 px-1 rounded-md text-blue-900">reliability</span>.
+  </p>
 
-          <p className="leading-relaxed text-base md:text-lg">
-            My role goes beyond technical support—it's about understanding laboratory workflows, empowering users, and ensuring diagnostic systems perform at their best. From on-site training and system validation to ongoing optimization, I help turn complex technology into confident, everyday practice.
-          </p>
-        </motion.div>
+  <p className="leading-relaxed text-base md:text-lg">
+    At the same time, I strive to absorb every piece of knowledge and experience needed 
+    to enhance my work, refine my talent, and continuously pursue my passion for architecture.
+  </p>
+</motion.div>
+
+
 
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-6 pt-6 md:pt-6 border-t border-gray-200 w-full">
@@ -85,7 +92,7 @@ const About: React.FC = memo(() => {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Location</p>
-                <p className="font-bold text-gray-900 text-sm">Cairo , Egypt </p>
+                <p className="font-bold text-gray-900 text-sm">Fifth Settlement , Cairo</p>
               </div>
             </div>
 
@@ -95,7 +102,7 @@ const About: React.FC = memo(() => {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Number </p>
-                <p className="font-bold text-gray-900 text-sm">+201004880451</p>
+                <p className="font-bold text-gray-900 text-sm">+201090304760</p>
               </div>
             </div>
           </motion.div>
@@ -119,7 +126,7 @@ const About: React.FC = memo(() => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50/50 md:hidden" />
 
             <img
-              src="/home.webp"
+              src="/about.png"
               alt="Portrait"
               loading="eager"
               decoding="async"
