@@ -82,10 +82,10 @@ const menuItems = [
 ] as const;
 
 const socialLinks = [
-    { icon: FacebookIcon, href: "#", label: "Facebook" },
-    { icon: InstagramIcon, href: "#", label: "Instagram" },
-    { icon: WhatsAppIcon, href: "https://github.com/yazioo/Alex_Portfolio/", label: "WhatsApp" },
-    { icon: LinkedInIcon, href: "#", label: "LinkedIn" },
+    { icon: FacebookIcon, href: "https://www.facebook.com/share/1EkT2V7A6w/?mibextid=wwXIfr", label: "Facebook" },
+    { icon: InstagramIcon, href: "https://www.instagram.com/ahmedkhaledph?igsh=cGUyNzBnOWU1dW56", label: "Instagram" },
+    { icon: WhatsAppIcon, href: "https://wa.me/+201090304760", label: "WhatsApp" },
+    { icon: LinkedInIcon, href: "https://www.linkedin.com/in/ahmed-khaled-07b32b274", label: "LinkedIn" },
 ] as const;
 
 
