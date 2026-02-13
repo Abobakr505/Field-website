@@ -2,6 +2,7 @@ import React, { useEffect, memo } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { MousePointer2, Briefcase, Award, GraduationCap, Asterisk } from 'lucide-react';
+import Testimonials from './Testimonials';
 
 // Updated color palette for a more elegant and cohesive look:
 // - Education: Warm amber/orange tones for academic feel (#F59E0B)
@@ -149,6 +150,7 @@ ExperienceCard.displayName = 'ExperienceCard';
 
 const Journey: React.FC = memo(() => {
   return (
+  <>
     <div className="w-full min-h-full flex flex-col items-center p-4 md:p-6 lg:p-8 overflow-visible pb-20">
       <div className="text-center mb-8 md:mb-10 shrink-0 relative z-10 mt-2">
         <motion.h2
@@ -422,6 +424,8 @@ const Journey: React.FC = memo(() => {
         </div>
       </div>
     </div>
+    <Testimonials/>
+    </>
   );
 });
 Journey.displayName = 'Journey';

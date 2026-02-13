@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { motion, Variants } from 'framer-motion';
 import { cn } from '../lib/utils';
-import { MapPin, Calendar, Phone } from 'lucide-react';
+import { MapPin, Calendar, Phone, Asterisk } from 'lucide-react';
+
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -140,6 +141,7 @@ const About: React.FC = memo(() => {
         </motion.div>
       </div>
     </div>
+  
   );
 });
 
