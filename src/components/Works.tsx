@@ -149,7 +149,7 @@ const Works: React.FC = memo(() => {
         className="shrink-0 pt-10 pb-6 flex flex-col items-center"
       >
         <a
-          href="https://github.com/yazioo/Alex_Portfolio/"
+          href="https://www.behance.net/e96d3821"
           className="flex items-center gap-2 text-gray-900 text-sm md:text-base font-bold border-b border-black hover:text-blue-600 hover:border-blue-600 transition-colors pb-1"
         >
           <FaBehanceSquare  className="w-5 h-5" />
