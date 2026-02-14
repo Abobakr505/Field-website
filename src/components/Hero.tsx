@@ -162,7 +162,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                             className="text-black pt-2 sm:pt-2"
                         >
-                            <span className="font-display font-bold">A Architect & </span>
+                            <span className="font-display font-bold">An Architect & </span>
                             <span className="relative inline-flex items-center">
                                 <span className="relative inline-block px-2">
                                     <svg
