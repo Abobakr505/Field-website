@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { motion, Variants, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, ChevronLeft, Share2 } from 'lucide-react';
+import { HashLink } from "react-router-hash-link";
 
 interface Project {
   id: number;
@@ -78,9 +79,11 @@ const ProjectDetails: React.FC = () => {
   if (error || !project) return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 text-red-500 flex-col gap-4">
       <p className="text-xl font-bold">Error: {error || 'Project not found'}</p>
-      <Link to="/works" className="flex items-center gap-2 text-blue-600 hover:underline">
+            <HashLink
+        smooth
+        to="/#Works" className="flex items-center gap-2 text-blue-600 hover:underline">
         <ChevronLeft size={20} /> Back to Projects
-      </Link>
+      </HashLink>
     </div>
   );
 
@@ -94,10 +97,14 @@ const ProjectDetails: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-between mb-8"
         >
-          <a href="/#works" className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
-            <ChevronLeft size={24} />
-            <span className="font-medium">Back to Projects</span>
-          </a>
+      <HashLink
+        smooth
+        to="/#Works"
+        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+      >
+        <ChevronLeft size={24} />
+        <span className="font-medium">Back to Projects</span>
+      </HashLink>
           <button 
             onClick={handleShare}
             className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-lg transition-all duration-300"

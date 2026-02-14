@@ -2,7 +2,6 @@ import React, { useState, useCallback, memo } from 'react';
 import { Mail, Home, Zap, User, Briefcase, Menu, X, BadgeCheck } from 'lucide-react';
 import { ShimmerButton } from './ShimmerButton';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaSquareWhatsapp } from "react-icons/fa6";
 interface NavbarProps {
     currentView: string;
     onNavigate: (view: string) => void;
