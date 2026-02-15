@@ -144,7 +144,7 @@ const FigmaVisual = memo(() => (
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
     >
       <div className="w-16 h-20 bg-gray-900 rounded-lg shadow-sm border border-gray-700 p-2 flex flex-col gap-1">
-        <div className="w-full h-8 bg-purple-900 rounded-md" />
+        <div className="w-full h-8 bg-[#E51013] rounded-md" />
         <div className="w-2/3 h-2 bg-gray-700 rounded-full" />
         <div className="w-full h-2 bg-gray-700 rounded-full" />
       </div>

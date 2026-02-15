@@ -202,7 +202,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-                        className="text-gray-400 text-xs sm:text-sm md:text-base max-w-[90%] md:max-w-4xl mx-auto mb-6 mt-2 leading-relaxed font-medium tracking-wide px-4"
+                        className="text-gray-300 text-xs sm:text-sm md:text-base max-w-[90%] md:max-w-4xl mx-auto mb-6 mt-2 leading-relaxed font-medium tracking-wide px-4"
                     >
 
 A reliable and precise professional driven by passion, backed by solid experience, and committed to delivering excellence.
@@ -226,7 +226,7 @@ A reliable and precise professional driven by passion, backed by solid experienc
 
                         <div className="relative inline-flex overflow-hidden rounded-full p-[1px]">
                             <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#06b6d4_0%,#10b981_33%,#f59e0b_66%,#06b6d4_100%)]" />
-                            <a className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-zinc-900/90 px-6 py-2.5 text-sm font-bold text-gray-200 backdrop-blur-3xl hover:bg-zinc-800 transition-all gap-2">
+                            <a href='/Ahmed-khaled-Ahmed-Cv.pdf' className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-zinc-900/90 px-6 py-2.5 text-sm font-bold text-gray-200 backdrop-blur-3xl hover:bg-zinc-800 transition-all gap-2" download>
                                 <Download size={18} className="text-white" />
                                 Download CV
                             </a>

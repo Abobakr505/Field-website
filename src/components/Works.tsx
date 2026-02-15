@@ -151,6 +151,7 @@ const Works: React.FC = memo(() => {
         <a
           href="https://www.behance.net/e96d3821"
           className="flex items-center gap-2 text-gray-100 text-sm md:text-base font-bold border-b border-white hover:text-blue-400 hover:border-blue-400 transition-colors pb-1"
+        target='_blank'
         >
           <FaBehanceSquare  className="w-5 h-5" />
           More on Behance

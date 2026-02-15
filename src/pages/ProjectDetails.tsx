@@ -68,6 +68,27 @@ const ProjectDetails: React.FC = () => {
       alert('Link copied to clipboard!');
     }
   };
+const formatVideoUrl = (url: string) => {
+  if (url.includes("vimeo.com")) {
+    const id = url.split("/").pop();
+    return `https://player.vimeo.com/video/${id}`;
+  }
+
+  if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    let id = "";
+
+    if (url.includes("youtu.be")) {
+      id = url.split("/").pop()!;
+    } else {
+      const params = new URL(url).searchParams;
+      id = params.get("v")!;
+    }
+
+    return `https://www.youtube.com/embed/${id}`;
+  }
+
+  return url;
+};
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 text-gray-100 flex-col gap-4">
@@ -144,17 +165,27 @@ const ProjectDetails: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
                 </div>
               )}
-              {project.video && (
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-zinc-700/50">
-                  <video 
-                    src={project.video} 
-                    className="w-full h-auto" 
-                    controls 
-                    playsInline 
-                    poster={project.main_image || "../assets/images/placeholder.webp"}
-                  />
-                </div>
-              )}
+{project.video && (
+  <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-zinc-700/50 aspect-video">
+    {project.video.includes("vimeo.com") || project.video.includes("youtube.com") ? (
+      <iframe
+        src={formatVideoUrl(project.video)}
+        className="w-full h-full"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+      />
+    ) : (
+      <video
+        src={project.video}
+        className="w-full h-full"
+        controls
+        playsInline
+        poster={project.main_image || "../assets/images/placeholder.webp"}
+      />
+    )}
+  </div>
+)}
+
             </motion.div>
             
             <motion.div variants={childVariants} className="space-y-8">
@@ -232,7 +263,7 @@ const ProjectDetails: React.FC = () => {
           </motion.div>
         )}
         
-        {project.sub_images.length > 0 && (
+        {project.sub_images?.length > 0 && (
           <motion.div 
             className="mb-16"
             variants={childVariants}
