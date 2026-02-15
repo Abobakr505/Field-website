@@ -242,7 +242,7 @@ A reliable and precise professional driven by passion, backed by solid experienc
                 >
                     <div className="relative w-full max-w-[1400px] mx-auto h-full flex items-end justify-center">
                         <div className="relative z-10 h-full w-full flex items-end justify-center pb-0">
-                            <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#1F2937] via-[#1F2937]/80 to-transparent opacity-[0.7] z-30"></div>
+                            <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#111] via-[#1F2937]/80 to-transparent opacity-[0.7] z-30"></div>
 
                             <img
                                 src="/home.png"

@@ -83,7 +83,7 @@ const About: React.FC = memo(() => {
               </div>
               <div>
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Experience</p>
-                <p className="font-bold text-gray-100 text-sm">7+ Years</p>
+                <p className="font-bold text-gray-100 text-sm">5+ Years</p>
               </div>
             </div>
 

@@ -72,7 +72,7 @@ const Login: React.FC = () => {
         <button 
           type="submit" 
           disabled={loading}
-          className="w-full py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
+          className="w-full py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
         >
           {loading ? (
             <div className="w-5 h-5 border-2 border-gray-100 border-t-transparent rounded-full animate-spin mr-2"></div>

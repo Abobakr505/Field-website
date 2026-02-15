@@ -432,7 +432,7 @@ const AdminDashboard = () => {
           className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4 sm:gap-8"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-100">Admin Dashboard</h2>
-          <button onClick={handleLogout} className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Logout</button>
+          <button onClick={handleLogout} className="px-4 sm:px-6 py-2 sm:py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Logout</button>
         </motion.div>
         {error && <p className="text-red-500 mb-4 text-center sm:text-left">{error}</p>}
         <motion.form 
@@ -530,7 +530,7 @@ const AdminDashboard = () => {
             <label className="block text-sm font-medium mb-2 text-gray-300">Features</label>
             <div className="flex flex-col sm:flex-row gap-2 mb-2">
               <input value={featureInput} onChange={(e) => setFeatureInput(e.target.value)} placeholder="Add feature" className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
-              <button type="button" onClick={addFeature} className="px-4 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
+              <button type="button" onClick={addFeature} className="px-4 py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
             </div>
             <ul className="space-y-2 max-h-40 overflow-y-auto">
               {formData.features.map((f, i) => (
@@ -546,7 +546,7 @@ const AdminDashboard = () => {
             <label className="block text-sm font-medium mb-2 text-gray-300">Technologies</label>
             <div className="flex flex-col sm:flex-row gap-2 mb-2">
               <input value={techInput} onChange={(e) => setTechInput(e.target.value)} placeholder="Add technology" className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
-              <button type="button" onClick={addTech} className="px-4 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
+              <button type="button" onClick={addTech} className="px-4 py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
             </div>
             <ul className="space-y-2 max-h-40 overflow-y-auto">
               {formData.technologies.map((t, i) => (
@@ -564,14 +564,14 @@ const AdminDashboard = () => {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="px-6 sm:px-8 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
+              className="px-6 sm:px-8 py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
             >
               {isSubmitting ? (
                 <div className="w-5 h-5 border-2 border-gray-100 border-t-transparent rounded-full animate-spin mr-2"></div>
               ) : null}
               {isSubmitting ? 'Processing...' : (isEditing ? 'Update' : 'Add')}
             </button>
-            {isEditing && <button type="button" onClick={resetForm} className="px-6 sm:px-8 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Cancel</button>}
+            {isEditing && <button type="button" onClick={resetForm} className="px-6 sm:px-8 py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Cancel</button>}
           </div>
         </motion.form>
         <motion.h3 
@@ -612,8 +612,8 @@ const AdminDashboard = () => {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  <button onClick={() => handleEdit(project)} className="px-3 sm:px-4 py-2 bg-zinc-800 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md">Edit</button>
-                  <button onClick={() => confirmDelete(project.id)} className="px-3 sm:px-4 py-2 bg-zinc-800 rounded-lg hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md">Delete</button>
+                  <button onClick={() => handleEdit(project)} className="px-3 sm:px-4 py-2 bg-black rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md">Edit</button>
+                  <button onClick={() => confirmDelete(project.id)} className="px-3 sm:px-4 py-2 bg-black rounded-lg hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md">Delete</button>
                 </div>
               </div>
             </motion.div>
