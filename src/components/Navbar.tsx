@@ -2,6 +2,7 @@ import React, { useState, useCallback, memo } from 'react';
 import { Mail, Home, Zap, User, Briefcase, Menu, X, BadgeCheck } from 'lucide-react';
 import { ShimmerButton } from './ShimmerButton';
 import { motion, AnimatePresence } from 'framer-motion';
+
 interface NavbarProps {
     currentView: string;
     onNavigate: (view: string) => void;
@@ -23,7 +24,6 @@ const FacebookIcon = memo(({ className = "" }: { className?: string }) => (
   </svg>
 ));
 FacebookIcon.displayName = "FacebookIcon";
-
 
 const InstagramIcon = memo(({ className = "" }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" className={className}>
@@ -70,7 +70,6 @@ const LinkedInIcon = memo(({ className = "" }: { className?: string }) => (
 ));
 LinkedInIcon.displayName = 'LinkedInIcon';
 
-
 const menuItems = [
     { name: 'Home', icon: Home },    
     { name: 'About', icon: User },
@@ -86,7 +85,6 @@ const socialLinks = [
     { icon: WhatsAppIcon, href: "https://wa.me/+201090304760", label: "WhatsApp" },
     { icon: LinkedInIcon, href: "https://www.linkedin.com/in/ahmed-khaled-07b32b274", label: "LinkedIn" },
 ] as const;
-
 
 const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -106,15 +104,15 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
         <>
             <nav className="relative z-50 w-full max-w-[1600px] mx-auto px-4 py-3 md:px-6 md:py-6 flex justify-center items-center pointer-events-none select-none shrink-0">
                 <div className="flex items-center gap-2 md:gap-4 pointer-events-auto">
-                    <div className="flex items-center p-1.5 pl-3 md:pl-4 gap-3 bg-white/40 backdrop-blur-[32px] border border-white/40 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.8)] rounded-full transition-all duration-500 hover:bg-white/50 transform-gpu ring-1 ring-black/[0.03]">
+                    <div className="flex items-center p-1.5 pl-3 md:pl-4 gap-3 bg-zinc-800/40 backdrop-blur-[32px] border border-zinc-700/40 shadow-[0_24px_48px_-12px_rgba(0,0,0,0.08),inset_0_1px_1px_rgba(255,255,255,0.1)] rounded-full transition-all duration-500 hover:bg-zinc-800/50 transform-gpu ring-1 ring-white/[0.03]">
                         <div
-                            className="pr-2 md:pr-3 flex items-center gap-2.5 group cursor-pointer border-r border-black/5"
+                            className="pr-2 md:pr-3 flex items-center gap-2.5 group cursor-pointer border-r border-white/5"
                             onClick={handleHomeClick}
                         >
                             <div className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center transition-transform duration-500 group-hover:rotate-6">
                                 <img className="" src="/favicon.png" alt="" />
                             </div>
-                            <span className="font-designer text-xl md:text-2xl tracking-tighter text-gray-900 hidden sm:block opacity-90 group-hover:opacity-100 transition-opacity">Ahmed </span>
+                            <span className="font-designer text-xl md:text-2xl tracking-tighter text-gray-100 hidden sm:block opacity-90 group-hover:opacity-100 transition-opacity">Ahmed </span>
                         </div>
 
                         <div className="hidden md:flex items-center gap-1">
@@ -125,23 +123,23 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                         key={item.name}
                                         onClick={() => onNavigate(item.name)}
                                         className={`
-                                            relative px-4  py-2  rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 group/item
-                                            ${isActive ? 'text-blue-900' : 'text-gray-500 hover:text-gray-700'}
+                                            relative px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 group/item
+                                            ${isActive ? 'text-blue-100' : 'text-gray-400 hover:text-gray-200'}
                                         `}
                                     >
                                         {isActive && (
                                             <motion.span
                                                 layoutId="nav-pill"
-                                                className="absolute inset-0 bg-gradient-to-b from-blue-50/90 to-blue-200/50 backdrop-blur-xl rounded-full z-0 border border-blue-200/60 shadow-[0_2px_14px_-3px_rgba(59,130,246,0.3),inset_0_1px_2px_rgba(255,255,255,1),inset_0_-1px_2px_rgba(59,130,246,0.15)]"
+                                                className="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-700/50 backdrop-blur-xl rounded-full z-0 border border-blue-800/60 shadow-[0_2px_14px_-3px_rgba(59,130,246,0.3),inset_0_1px_2px_rgba(255,255,255,0.1),inset_0_-1px_2px_rgba(59,130,246,0.15)]"
                                                 transition={{ type: "spring", bounce: 0.28, duration: 0.6 }}
                                             />
                                         )}
                                         <item.icon
                                             size={15}
                                             strokeWidth={isActive ? 2.5 : 2}
-                                            className={`relative z-10 transition-transform duration-300 ${isActive ? "text-blue-800 scale-110 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]" : "opacity-70 group-hover/item:scale-105"}`}
+                                            className={`relative z-10 transition-transform duration-300 ${isActive ? "text-blue-200 scale-110 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]" : "opacity-70 group-hover/item:scale-105"}`}
                                         />
-                                        <span className={`relative font-display z-10 tracking-tight transition-colors duration-300 ${isActive ? "text-blue-950 font-bold" : ""}`}>
+                                        <span className={`relative font-display z-10 tracking-tight transition-colors duration-300 ${isActive ? "text-blue-50 font-bold" : ""}`}>
                                             {item.name}
                                         </span>
                                     </button>
@@ -150,7 +148,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                         </div>
 
                         <button
-                            className="md:hidden w-8 h-8 flex items-center justify-center rounded-full bg-gray-100/50 hover:bg-gray-100 transition-colors border border-black/5 text-gray-800"
+                            className="md:hidden w-8 h-8 flex items-center justify-center rounded-full bg-gray-800/50 hover:bg-gray-800 transition-colors border border-white/5 text-gray-200"
                             onClick={handleMobileMenuOpen}
                         >
                             <Menu size={18} />
@@ -177,7 +175,6 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                                 href={social.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                        
                                                 custom={index}
                                                 className="absolute w-12 h-12 bg-black rounded-full flex items-center justify-center text-white shadow-xl border border-white/10 pointer-events-auto hover:bg-gray-900 hover:scale-110 transition-colors z-[-1]"
                                                 initial={{ x: 0, y: 0, opacity: 0, scale: 0.5 }}
@@ -243,13 +240,13 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                         animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
                         exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
                         transition={{ duration: 0.3 }}
-                        className="fixed inset-0 z-[100] bg-white/80 flex flex-col items-center justify-center pointer-events-auto"
+                        className="fixed inset-0 z-[100] bg-zinc-900/80 flex flex-col items-center justify-center pointer-events-auto"
                     >
                         <button
-                            className="absolute top-6 right-6 p-3 rounded-full bg-gray-100/50 hover:bg-gray-100 transition-colors"
+                            className="absolute top-6 right-6 p-3 rounded-full bg-gray-800/50 hover:bg-gray-800 transition-colors"
                             onClick={handleMobileMenuClose}
                         >
-                            <X size={24} className="text-gray-900" />
+                            <X size={24} className="text-gray-100" />
                         </button>
 
                         <nav className="flex flex-col gap-8 text-center">
@@ -261,7 +258,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.4, delay: index * 0.1 }}
                                     onClick={() => handleMobileNavClick(item.name)}
-                                    className={`text-3xl font-display font-bold flex items-center justify-center gap-4 ${currentView === item.name ? 'text-[#fcdd00]' : 'text-gray-900'
+                                    className={`text-3xl font-display font-bold flex items-center justify-center gap-4 ${currentView === item.name ? 'text-[#fcdd00]' : 'text-gray-100'
                                         }`}
                                 >
                                     <item.icon size={28} strokeWidth={currentView === item.name ? 3 : 2} />

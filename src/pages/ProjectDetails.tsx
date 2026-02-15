@@ -70,25 +70,25 @@ const ProjectDetails: React.FC = () => {
   };
 
   if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900 flex-col gap-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 text-gray-100 flex-col gap-4">
       <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       <p className="text-lg font-medium">Loading Project...</p>
     </div>
   );
 
   if (error || !project) return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 text-red-500 flex-col gap-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 text-red-400 flex-col gap-4">
       <p className="text-xl font-bold">Error: {error || 'Project not found'}</p>
             <HashLink
         smooth
-        to="/#Works" className="flex items-center gap-2 text-blue-600 hover:underline">
+        to="/#Works" className="flex items-center gap-2 text-blue-400 hover:underline">
         <ChevronLeft size={20} /> Back to Projects
       </HashLink>
     </div>
   );
 
   return (
-    <div className="h-screen bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900 relative overflow-x-hidden py-16 px-4 md:px-8">
+    <div className="h-screen bg-gradient-to-br from-zinc-900 to-zinc-800 text-gray-100 relative overflow-x-hidden py-16 px-4 md:px-8">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.1)_0%,transparent_50%)] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -100,28 +100,28 @@ const ProjectDetails: React.FC = () => {
       <HashLink
         smooth
         to="/#Works"
-        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+        className="flex items-center gap-2 text-blue-400 hover:text-blue-200 transition-colors"
       >
         <ChevronLeft size={24} />
         <span className="font-medium">Back to Projects</span>
       </HashLink>
           <button 
             onClick={handleShare}
-            className="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-md rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+            className="flex items-center gap-2 px-4 py-2 bg-zinc-800/80 backdrop-blur-md rounded-full shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <Share2 size={20} className="text-gray-700" />
-            <span className="text-sm font-medium text-gray-700">Share</span>
+            <Share2 size={20} className="text-gray-300" />
+            <span className="text-sm font-medium text-gray-300">Share</span>
           </button>
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-6xl font-bold mb-12 font-display text-gray-900 tracking-tight"
+          className="text-4xl md:text-6xl font-bold mb-12 font-display text-gray-100 tracking-tight"
           variants={childVariants}
           initial="hidden"
           animate="visible"
         >
           {project.name}
-          <span className="block text-lg md:text-xl font-normal text-gray-600 mt-2">{project.project_type}</span>
+          <span className="block text-lg md:text-xl font-normal text-gray-400 mt-2">{project.project_type}</span>
         </motion.h1>
         
         <AnimatePresence>
@@ -133,7 +133,7 @@ const ProjectDetails: React.FC = () => {
           >
             <motion.div variants={childVariants} className="space-y-8">
               {project.main_image && (
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/50">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-zinc-700/50">
                   <img 
                     src={project.main_image} 
                     alt={project.name} 
@@ -145,7 +145,7 @@ const ProjectDetails: React.FC = () => {
                 </div>
               )}
               {project.video && (
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-white/50">
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl border border-zinc-700/50">
                   <video 
                     src={project.video} 
                     className="w-full h-auto" 
@@ -158,25 +158,25 @@ const ProjectDetails: React.FC = () => {
             </motion.div>
             
             <motion.div variants={childVariants} className="space-y-8">
-              <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/50" style={{ background: 'linear-gradient(145deg, #ffffff, #f0f4f8)' }}>
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center font-display gap-2">
+              <div className="bg-zinc-800/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-zinc-700/50" style={{ background: 'linear-gradient(145deg, #18181b, #27272a)' }}>
+                <h2 className="text-2xl font-bold mb-6 text-gray-100 flex items-center font-display gap-2">
                   <span className="w-2 h-2 bg-blue-500 rounded-full " />
                   Project Info
                 </h2>
-                <div className="space-y-4 text-gray-600">
-                  <p><span className="font-semibold text-gray-900">Client:</span> {project.company_name || 'N/A'}</p>
-                  <p><span className="font-semibold text-gray-900">Partner:</span> {project.partner_company || 'N/A'}</p>
-                  <p><span className="font-semibold text-gray-900">Location:</span> {project.location || 'N/A'}</p>
-                  <p><span className="font-semibold text-gray-900">Type:</span> {project.project_type || 'N/A'}</p>
+                <div className="space-y-4 text-gray-400">
+                  <p><span className="font-semibold text-gray-100">Client:</span> {project.company_name || 'N/A'}</p>
+                  <p><span className="font-semibold text-gray-100">Partner:</span> {project.partner_company || 'N/A'}</p>
+                  <p><span className="font-semibold text-gray-100">Location:</span> {project.location || 'N/A'}</p>
+                  <p><span className="font-semibold text-gray-100">Type:</span> {project.project_type || 'N/A'}</p>
                 </div>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/50" style={{ background: 'linear-gradient(145deg, #ffffff, #f0f4f8)' }}>
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center font-display gap-2">
+              <div className="bg-zinc-800/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-zinc-700/50" style={{ background: 'linear-gradient(145deg, #18181b, #27272a)' }}>
+                <h2 className="text-2xl font-bold mb-6 text-gray-100 flex items-center font-display gap-2">
                   <span className="w-2 h-2 bg-blue-500 rounded-full" />
                   Description
                 </h2>
-                <p className="text-gray-600 leading-relaxed">{project.description || 'No description available.'}</p>
+                <p className="text-gray-400 leading-relaxed">{project.description || 'No description available.'}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -189,7 +189,7 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-display flex items-center gap-2">
+            <h2 className="text-3xl font-bold mb-8 text-gray-100 font-display flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500  rounded-full" />
               Key Features
             </h2>
@@ -197,10 +197,10 @@ const ProjectDetails: React.FC = () => {
               {project.features.map((feature, i) => (
                 <motion.div 
                   key={i} 
-                  className="p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+                  className="p-6 bg-zinc-800/80 backdrop-blur-md rounded-2xl shadow-lg border border-zinc-700/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <p className="text-gray-700">{feature}</p>
+                  <p className="text-gray-300">{feature}</p>
                 </motion.div>
               ))}
             </div>
@@ -214,7 +214,7 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center font-display gap-2">
+            <h2 className="text-3xl font-bold mb-8 text-gray-100 flex items-center font-display gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full" />
               Technologies Used
             </h2>
@@ -222,10 +222,10 @@ const ProjectDetails: React.FC = () => {
               {project.technologies.map((tech, i) => (
                 <motion.div 
                   key={i} 
-                  className="p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 flex items-center justify-center"
+                  className="p-4 bg-zinc-800/80 backdrop-blur-md rounded-2xl shadow-lg border border-zinc-700/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <span className="text-gray-700 font-medium">{tech}</span>
+                  <span className="text-gray-300 font-medium">{tech}</span>
                 </motion.div>
               ))}
             </div>
@@ -239,7 +239,7 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-display flex items-center gap-2">
+            <h2 className="text-3xl font-bold mb-8 text-gray-100 font-display flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full" />
               Gallery
             </h2>
@@ -249,7 +249,7 @@ const ProjectDetails: React.FC = () => {
                   key={i} 
                   src={img} 
                   alt={`Gallery ${i + 1}`} 
-                  className="w-full h-72 object-cover rounded-2xl shadow-xl border border-white/50 transition-all duration-500"
+                  className="w-full h-72 object-cover rounded-2xl shadow-xl border border-zinc-700/50 transition-all duration-500"
                   loading="lazy"
                   onError={(e) => { e.currentTarget.src = "../assets/images/placeholder.webp"; }}
                   initial={{ opacity: 0, scale: 0.95 }}

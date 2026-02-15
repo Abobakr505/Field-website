@@ -30,7 +30,7 @@ const Login: React.FC = () => {
     } catch (error: any) {
       toast.error(error.message || 'An error occurred during login.', {
         position: "top-right",
-        theme: "light",
+        theme: "dark",
       });
     } finally {
       setLoading(false);
@@ -38,16 +38,16 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 flex items-center justify-center relative overflow-hidden py-12">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 to-zinc-800 text-gray-100 flex items-center justify-center relative overflow-hidden py-12">
       <ToastContainer />
       <motion.form 
         onSubmit={handleSubmit} 
-        className="bg-white p-8 rounded-[24px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-gray-100 w-full max-w-md"
+        className="bg-zinc-800 p-8 rounded-[24px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-zinc-700 w-full max-w-md"
         initial="hidden"
         animate="visible"
         variants={loginVariants}
       >
-        <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">
+        <h2 className="text-4xl font-bold mb-8 text-center text-gray-100">
           Login
         </h2>
         
@@ -56,7 +56,7 @@ const Login: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
-          className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm"
+          className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm"
           required
         />
         
@@ -65,17 +65,17 @@ const Login: React.FC = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          className="w-full mb-6 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm"
+          className="w-full mb-6 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm"
           required
         />
         
         <button 
           type="submit" 
           disabled={loading}
-          className="w-full py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
+          className="w-full py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
         >
           {loading ? (
-            <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin mr-2"></div>
+            <div className="w-5 h-5 border-2 border-gray-100 border-t-transparent rounded-full animate-spin mr-2"></div>
           ) : null}
           {loading ? 'Processing...' : 'Login'}
         </button>

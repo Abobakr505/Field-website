@@ -16,18 +16,18 @@ const cardVariants = {
   hidden: { opacity: 0, y: 50, scale: 0.9, filter: "blur(10px)" },
   visible: {
     opacity: 1, y: 0, scale: 1, filter: "blur(0px)",
-    transition: { type: "spring", damping: 20, stiffness: 100 }
+    transition: { type: "spring", damping: 15, stiffness: 120, duration: 0.5 }
   }
 };
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15, delayChildren: 0.3 } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.4 } }
 };
 
 const headerVariants = {
-  hidden: { opacity: 0, y: -20, filter: "blur(5px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: "easeOut" } }
+  hidden: { opacity: 0, y: -30, filter: "blur(5px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: "easeOut" } }
 };
 
 const AdminDashboard = () => {
@@ -276,14 +276,14 @@ const AdminDashboard = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
       });
     } catch (err) {
       setError(err.message || 'An error occurred during upload/submit.');
       toast.error('Error: ' + (err.message || 'An error occurred.'), {
         position: "top-right",
         autoClose: 3000,
-        theme: "light",
+        theme: "dark",
       });
     } finally {
       setIsSubmitting(false);
@@ -324,10 +324,10 @@ const AdminDashboard = () => {
       const { error } = await supabase.from('projects').delete().eq('id', deleteProjectId);
       if (error) {
         setError(error.message);
-        toast.error('Error deleting project: ' + error.message, { theme: "light" });
+        toast.error('Error deleting project: ' + error.message, { theme: "dark" });
       } else {
         fetchProjects();
-        toast.success('Project deleted successfully!', { theme: "light" });
+        toast.success('Project deleted successfully!', { theme: "dark" });
       }
       setDeleteProjectId(null);
     }
@@ -371,11 +371,11 @@ const AdminDashboard = () => {
   const customSelectStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: '#f9fafb',
-      border: '1px solid #d1d5db',
+      backgroundColor: '#18181b',
+      border: '1px solid #27272a',
       borderRadius: '0.5rem',
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
-      color: '#111827',
+      color: '#d4d4d8',
       '&:hover': {
         borderColor: '#3b82f6',
         boxShadow: '0 2px 4px rgba(59, 130, 246, 0.1)',
@@ -384,24 +384,24 @@ const AdminDashboard = () => {
     }),
     menu: (provided) => ({
       ...provided,
-      backgroundColor: '#ffffff',
-      border: '1px solid #d1d5db',
+      backgroundColor: '#18181b',
+      border: '1px solid #27272a',
       borderRadius: '0.5rem',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected ? '#dbeafe' : 'transparent',
-      color: '#111827',
+      backgroundColor: state.isSelected ? '#27272a' : 'transparent',
+      color: '#d4d4d8',
       padding: '10px 20px',
       '&:hover': {
-        backgroundColor: '#eff6ff',
+        backgroundColor: '#3b82f6',
       },
       transition: 'background-color 0.2s ease',
     }),
     singleValue: (provided) => ({
       ...provided,
-      color: '#111827',
+      color: '#d4d4d8',
     }),
     placeholder: (provided) => ({
       ...provided,
@@ -415,14 +415,14 @@ const AdminDashboard = () => {
   ];
 
   if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-white text-gray-900 flex-col gap-4">
+    <div className="min-h-screen flex items-center justify-center bg-zinc-900 text-gray-100 flex-col gap-4">
       <div className="w-12 h-12 border-4 border-gray-500 border-t-transparent rounded-full animate-spin"></div>
       Loading...
     </div>
   );
 
   return (
-    <div className="h-screen bg-white text-gray-900 relative  overflow-x-hidden py-8 sm:py-12">
+    <div className="h-screen bg-zinc-900 text-gray-100 relative  overflow-x-hidden py-8 sm:py-12">
       <ToastContainer />
       <div className="max-w-7xl mx-auto px-2 sm:px-4 z-10 relative">
         <motion.div
@@ -431,31 +431,31 @@ const AdminDashboard = () => {
           variants={headerVariants}
           className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4 sm:gap-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">Admin Dashboard</h2>
-          <button onClick={handleLogout} className="px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Logout</button>
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-100">Admin Dashboard</h2>
+          <button onClick={handleLogout} className="px-4 sm:px-6 py-2 sm:py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Logout</button>
         </motion.div>
         {error && <p className="text-red-500 mb-4 text-center sm:text-left">{error}</p>}
         <motion.form 
           onSubmit={handleSubmit} 
-          className="bg-white p-4 sm:p-6 rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-gray-100 mb-8 sm:mb-12"
+          className="bg-zinc-800 p-4 sm:p-6 rounded-2xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-zinc-700 mb-8 sm:mb-12"
           initial="hidden"
           animate="visible"
           variants={headerVariants}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900">{isEditing ? 'Edit Project' : 'Add New Project'}</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-100">{isEditing ? 'Edit Project' : 'Add New Project'}</h3>
           
-          <input name="name" value={formData.name} onChange={handleInputChange} placeholder="Project Name" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" required />
+          <input name="name" value={formData.name} onChange={handleInputChange} placeholder="Project Name" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" required />
           
-          <input name="company_name" value={formData.company_name} onChange={handleInputChange} placeholder="Client Company Name" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" required />
+          <input name="company_name" value={formData.company_name} onChange={handleInputChange} placeholder="Client Company Name" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" required />
           
-          <input name="partner_company" value={formData.partner_company} onChange={handleInputChange} placeholder="Partner Company Name (the company you worked with)" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+          <input name="partner_company" value={formData.partner_company} onChange={handleInputChange} placeholder="Partner Company Name (the company you worked with)" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
           
-          <input name="location" value={formData.location} onChange={handleInputChange} placeholder="Project Location" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+          <input name="location" value={formData.location} onChange={handleInputChange} placeholder="Project Location" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
           
-          <input name="project_type" value={formData.project_type} onChange={handleInputChange} placeholder="Project Type" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+          <input name="project_type" value={formData.project_type} onChange={handleInputChange} placeholder="Project Type" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2 text-gray-700">Main Image {isEditing && '(Leave blank to keep existing)'}</label>
+            <label className="block text-sm font-medium mb-2 text-gray-300">Main Image {isEditing && '(Leave blank to keep existing)'}</label>
             <Select
               value={typeOptions.find(option => option.value === mainImageType)}
               onChange={(selected) => setMainImageType(selected.value)}
@@ -464,20 +464,20 @@ const AdminDashboard = () => {
               className="mb-2"
             />
             {mainImageType === 'file' ? (
-              <div ref={mainImageDropRef} className={`w-full px-4 py-6 bg-gray-50 border-2 ${isDragging ? 'border-blue-500' : 'border-gray-200'} border-dashed rounded-lg text-gray-900 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
+              <div ref={mainImageDropRef} className={`w-full px-4 py-6 bg-zinc-900 border-2 ${isDragging ? 'border-blue-500' : 'border-zinc-700'} border-dashed rounded-lg text-gray-100 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
                 <input type="file" accept="image/*" onChange={(e) => handleFileChange(e, 'main')} className="hidden" id="mainImageFile" />
                 <label htmlFor="mainImageFile" className="cursor-pointer">
                   {mainImageFile ? mainImageFile.name : 'Drag & drop image here or click to upload'}
                 </label>
               </div>
             ) : (
-              <input value={mainImageUrlInput} onChange={(e) => setMainImageUrlInput(e.target.value)} placeholder="Main Image URL" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+              <input value={mainImageUrlInput} onChange={(e) => setMainImageUrlInput(e.target.value)} placeholder="Main Image URL" className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
             )}
             {isEditing && formData.main_image && <img src={formData.main_image} alt="Current main" className="mt-2 w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg shadow-md" />}
           </div>
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2 text-gray-700">Sub Images {isEditing && '(Add new ones; existing will be kept and new added if using file upload, or edit URLs to modify)'}</label>
+            <label className="block text-sm font-medium mb-2 text-gray-300">Sub Images {isEditing && '(Add new ones; existing will be kept and new added if using file upload, or edit URLs to modify)'}</label>
             <Select
               value={typeOptions.find(option => option.value === subImagesType)}
               onChange={(selected) => setSubImagesType(selected.value)}
@@ -486,14 +486,14 @@ const AdminDashboard = () => {
               className="mb-2"
             />
             {subImagesType === 'file' ? (
-              <div ref={subImagesDropRef} className={`w-full px-4 py-6 bg-gray-50 border-2 ${isDragging ? 'border-blue-500' : 'border-gray-200'} border-dashed rounded-lg text-gray-900 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
+              <div ref={subImagesDropRef} className={`w-full px-4 py-6 bg-zinc-900 border-2 ${isDragging ? 'border-blue-500' : 'border-zinc-700'} border-dashed rounded-lg text-gray-100 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
                 <input type="file" accept="image/*" multiple onChange={handleSubImagesChange} className="hidden" id="subImagesFiles" />
                 <label htmlFor="subImagesFiles" className="cursor-pointer">
                   {subImageFiles.length > 0 ? `${subImageFiles.length} files selected` : 'Drag & drop images here or click to upload multiple'}
                 </label>
               </div>
             ) : (
-              <input value={subImagesUrlInput} onChange={(e) => setSubImagesUrlInput(e.target.value)} placeholder="Sub Images URLs (comma separated)" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+              <input value={subImagesUrlInput} onChange={(e) => setSubImagesUrlInput(e.target.value)} placeholder="Sub Images URLs (comma separated)" className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
             )}
             {isEditing && formData.sub_images.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-2 overflow-x-auto max-w-full">
@@ -502,10 +502,10 @@ const AdminDashboard = () => {
             )}
           </div>
           
-          <textarea name="description" value={formData.description} onChange={handleInputChange} placeholder="Description" className="w-full mb-4 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" rows={4} />
+          <textarea name="description" value={formData.description} onChange={handleInputChange} placeholder="Description" className="w-full mb-4 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" rows={4} />
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2 text-gray-700">Video {isEditing && '(Leave blank to keep existing)'}</label>
+            <label className="block text-sm font-medium mb-2 text-gray-300">Video {isEditing && '(Leave blank to keep existing)'}</label>
             <Select
               value={typeOptions.find(option => option.value === videoType)}
               onChange={(selected) => setVideoType(selected.value)}
@@ -514,27 +514,27 @@ const AdminDashboard = () => {
               className="mb-2"
             />
             {videoType === 'file' ? (
-              <div ref={videoDropRef} className={`w-full px-4 py-6 bg-gray-50 border-2 ${isDragging ? 'border-blue-500' : 'border-gray-200'} border-dashed rounded-lg text-gray-900 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
+              <div ref={videoDropRef} className={`w-full px-4 py-6 bg-zinc-900 border-2 ${isDragging ? 'border-blue-500' : 'border-zinc-700'} border-dashed rounded-lg text-gray-100 text-center cursor-pointer transition-all shadow-sm hover:border-blue-500/50`}>
                 <input type="file" accept="video/*" onChange={(e) => handleFileChange(e, 'video')} className="hidden" id="videoFile" />
                 <label htmlFor="videoFile" className="cursor-pointer">
                   {videoFile ? videoFile.name : 'Drag & drop video here or click to upload'}
                 </label>
               </div>
             ) : (
-              <input value={videoUrlInput} onChange={(e) => setVideoUrlInput(e.target.value)} placeholder="Video URL (e.g., YouTube , Viemo embed)" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+              <input value={videoUrlInput} onChange={(e) => setVideoUrlInput(e.target.value)} placeholder="Video URL (e.g., YouTube , Viemo embed)" className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
             )}
             {isEditing && formData.video && <video src={formData.video} className="mt-2 w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-lg shadow-md" controls />}
           </div>
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2 text-gray-700">Features</label>
+            <label className="block text-sm font-medium mb-2 text-gray-300">Features</label>
             <div className="flex flex-col sm:flex-row gap-2 mb-2">
-              <input value={featureInput} onChange={(e) => setFeatureInput(e.target.value)} placeholder="Add feature" className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
-              <button type="button" onClick={addFeature} className="px-4 py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
+              <input value={featureInput} onChange={(e) => setFeatureInput(e.target.value)} placeholder="Add feature" className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+              <button type="button" onClick={addFeature} className="px-4 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
             </div>
             <ul className="space-y-2 max-h-40 overflow-y-auto">
               {formData.features.map((f, i) => (
-                <li key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+                <li key={i} className="flex justify-between items-center p-2 bg-zinc-900 rounded-lg shadow-sm border border-zinc-700">
                   {f}
                   <button type="button" onClick={() => removeFeature(i)} className="text-red-500 hover:text-red-700 transition-colors">Remove</button>
                 </li>
@@ -543,14 +543,14 @@ const AdminDashboard = () => {
           </div>
           
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-2 text-gray-700">Technologies</label>
+            <label className="block text-sm font-medium mb-2 text-gray-300">Technologies</label>
             <div className="flex flex-col sm:flex-row gap-2 mb-2">
-              <input value={techInput} onChange={(e) => setTechInput(e.target.value)} placeholder="Add technology" className="flex-1 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
-              <button type="button" onClick={addTech} className="px-4 py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
+              <input value={techInput} onChange={(e) => setTechInput(e.target.value)} placeholder="Add technology" className="flex-1 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+              <button type="button" onClick={addTech} className="px-4 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Add</button>
             </div>
             <ul className="space-y-2 max-h-40 overflow-y-auto">
               {formData.technologies.map((t, i) => (
-                <li key={i} className="flex justify-between items-center p-2 bg-gray-50 rounded-lg shadow-sm border border-gray-100">
+                <li key={i} className="flex justify-between items-center p-2 bg-zinc-900 rounded-lg shadow-sm border border-zinc-700">
                   {t}
                   <button type="button" onClick={() => removeTech(i)} className="text-red-500 hover:text-red-700 transition-colors">Remove</button>
                 </li>
@@ -558,24 +558,24 @@ const AdminDashboard = () => {
             </ul>
           </div>
           
-          <input name="behance" value={formData.behance} onChange={handleInputChange} placeholder="Behance URL (optional)" className="w-full mb-4 sm:mb-6 px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
+          <input name="behance" value={formData.behance} onChange={handleInputChange} placeholder="Behance URL (optional)" className="w-full mb-4 sm:mb-6 px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-lg text-gray-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-sm" />
           
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="px-6 sm:px-8 py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
+              className="px-6 sm:px-8 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg flex items-center justify-center"
             >
               {isSubmitting ? (
-                <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin mr-2"></div>
+                <div className="w-5 h-5 border-2 border-gray-100 border-t-transparent rounded-full animate-spin mr-2"></div>
               ) : null}
               {isSubmitting ? 'Processing...' : (isEditing ? 'Update' : 'Add')}
             </button>
-            {isEditing && <button type="button" onClick={resetForm} className="px-6 sm:px-8 py-3 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Cancel</button>}
+            {isEditing && <button type="button" onClick={resetForm} className="px-6 sm:px-8 py-3 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Cancel</button>}
           </div>
         </motion.form>
         <motion.h3 
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900"
+          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-100"
           initial="hidden"
           animate="visible"
           variants={headerVariants}
@@ -592,9 +592,9 @@ const AdminDashboard = () => {
             <motion.div
               key={project.id}
               variants={cardVariants}
-              className="group relative flex flex-col w-full bg-white rounded-[24px] p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-gray-100 transition-all duration-500 hover:-translate-y-2 h-auto min-h-[320px]"
+              className="group relative flex flex-col w-full bg-zinc-800 rounded-[24px] p-2.5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-zinc-700 transition-all duration-500 hover:-translate-y-2 h-auto min-h-[320px]"
             >
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[18px] bg-gray-100 shrink-0 mb-4">
+              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[18px] bg-zinc-900 shrink-0 mb-4">
                 <img
                   src={project.main_image || "../assets/images/placeholder.webp"}
                   onError={(e) => { e.currentTarget.src = "../assets/images/placeholder.webp"; }}
@@ -604,16 +604,16 @@ const AdminDashboard = () => {
               </div>
               <div className="flex flex-col flex-grow px-2 pt-4 pb-2">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="text-lg font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-lg font-bold text-gray-100 leading-tight group-hover:text-blue-400 transition-colors">
                     {project.name}
                   </h4>
-                  <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase bg-gray-50 px-2 py-1 rounded-full border border-gray-100">
+                  <span className="text-[10px] font-bold tracking-widest text-gray-400 uppercase bg-zinc-900 px-2 py-1 rounded-full border border-zinc-700">
                     {project.company_name}
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2 mt-auto">
-                  <button onClick={() => handleEdit(project)} className="px-3 sm:px-4 py-2 bg-gray-200 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md">Edit</button>
-                  <button onClick={() => confirmDelete(project.id)} className="px-3 sm:px-4 py-2 bg-gray-200 rounded-lg hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md">Delete</button>
+                  <button onClick={() => handleEdit(project)} className="px-3 sm:px-4 py-2 bg-zinc-800 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md">Edit</button>
+                  <button onClick={() => confirmDelete(project.id)} className="px-3 sm:px-4 py-2 bg-zinc-800 rounded-lg hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md">Delete</button>
                 </div>
               </div>
             </motion.div>
@@ -630,28 +630,28 @@ const AdminDashboard = () => {
             transition={{ duration: 0.3 }}
           >
             <motion.div
-              className="bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 max-w-sm w-full"
+              className="bg-zinc-800 p-6 rounded-2xl shadow-2xl border border-zinc-700 max-w-sm w-full"
               initial={{ scale: 0.8, y: 40, opacity: 0 }}
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.8, y: 40, opacity: 0 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
             >
-              <h3 className="text-xl font-bold mb-4 text-gray-900">
+              <h3 className="text-xl font-bold mb-4 text-gray-100">
                 Confirm Deletion
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-400 mb-6">
                 Are you sure you want to delete this project? This action cannot be undone.
               </p>
               <div className="flex justify-end gap-4">
                 <button
                   onClick={() => setShowDeleteModal(false)}
-                  className="px-4 py-2 bg-gray-200 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md"
+                  className="px-4 py-2 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleDelete}
-                  className="px-4 py-2 bg-gray-200 rounded-lg font-bold hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md"
+                  className="px-4 py-2 bg-zinc-800 rounded-lg font-bold hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md"
                 >
                   Delete
                 </button>

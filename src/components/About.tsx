@@ -31,7 +31,7 @@ const About: React.FC = memo(() => {
           viewport={{ once: true, margin: "-10% 0px" }}
         >
           <motion.div variants={itemVariants} className="mb-4 md:mb-4 relative">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-900 tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-gray-100 tracking-tight leading-tight">
               About
               <div className="relative inline-block ml-3">
                 <span className="font-designer font-normal relative z-10">Me</span>
@@ -58,13 +58,13 @@ const About: React.FC = memo(() => {
             </h2>
           </motion.div>
 
-<motion.div variants={itemVariants} className="prose prose-lg text-gray-600 mb-6 md:mb-6">
-  <p className="text-lg md:text-xl leading-relaxed font-medium text-gray-800 mb-4 md:mb-4">
+<motion.div variants={itemVariants} className="prose prose-lg text-gray-400 mb-6 md:mb-6">
+  <p className="text-lg md:text-xl leading-relaxed font-medium text-gray-300 mb-4 md:mb-4">
     I'm Ahmed Khaled, an architect who is constantly seeking to give to and learn from my field of profession.
     I aim to bring architecture to a new level of 
-    <span className="bg-yellow-100 px-1 rounded-md text-yellow-900">creativity</span> 
+    <span className="bg-yellow-900/50 px-1 rounded-md text-yellow-300">creativity</span> 
     accompanied by the perfect balance of 
-    <span className="bg-blue-50 px-1 rounded-md text-blue-900">reliability</span>.
+    <span className="bg-blue-900/50 px-1 rounded-md text-blue-300">reliability</span>.
   </p>
 
   <p className="leading-relaxed text-base md:text-lg">
@@ -76,34 +76,34 @@ const About: React.FC = memo(() => {
 
 
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-6 pt-6 md:pt-6 border-t border-gray-200 w-full">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-6 pt-6 md:pt-6 border-t border-gray-700 w-full">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-50 rounded-full text-blue-600">
+              <div className="p-2 bg-blue-900/50 rounded-full text-blue-400">
                 <Calendar size={18} />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Experience</p>
-                <p className="font-bold text-gray-900 text-sm">7+ Years</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Experience</p>
+                <p className="font-bold text-gray-100 text-sm">7+ Years</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-orange-50 rounded-full text-orange-600">
+              <div className="p-2 bg-orange-900/50 rounded-full text-orange-400">
                 <MapPin size={18} />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Location</p>
-                <p className="font-bold text-gray-900 text-sm">Fifth Settlement , Cairo</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Location</p>
+                <p className="font-bold text-gray-100 text-sm">Fifth Settlement , Cairo</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-yellow-50 rounded-full text-yellow-600">
+              <div className="p-2 bg-yellow-900/50 rounded-full text-yellow-400">
                 <Phone size={18} />
               </div>
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Number </p>
-                <p className="font-bold text-gray-900 text-sm">+201090304760</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Number </p>
+                <p className="font-bold text-gray-100 text-sm">+201090304760</p>
               </div>
             </div>
           </motion.div>
@@ -118,13 +118,13 @@ const About: React.FC = memo(() => {
         >
           <div className={cn(
             "relative w-[280px] sm:w-[320px] aspect-[3/4] mx-auto mb-10",
-            "bg-gray-50 rounded-[2rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.12)] overflow-hidden",
-            "border-[6px] border-white ring-1 ring-black/5",
+            "bg-gray-800 rounded-[2rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.12)] overflow-hidden",
+            "border-[6px] border-zinc-900 ring-1 ring-white/5",
             "md:w-full md:aspect-auto md:mx-0 md:mb-0",
             "md:bg-transparent md:rounded-none md:shadow-none md:overflow-visible",
             "md:border-none md:ring-0"
           )}>
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50/50 md:hidden" />
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-indigo-900/50 md:hidden" />
 
             <img
               src="/about.png"

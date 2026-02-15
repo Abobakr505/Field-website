@@ -41,36 +41,36 @@ const ProjectCard = memo(({ project }: { project: Project }) => {
     <Link to={`/project/${project.id}`}>
       <motion.div
         variants={cardVariants}
-        className="group relative flex flex-col w-full max-w-md mx-auto bg-white rounded-[32px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_48px_rgba(0,0,0,0.12)] border border-gray-200 hover:border-blue-300 transition-all duration-500 hover:-translate-y-3 hover:scale-105 h-auto min-h-[400px] gpu-accelerated overflow-hidden"
-        style={{ background: 'linear-gradient(145deg, #ffffff, #f8f9fa)' }} // Subtle gradient for beauty
+        className="group relative flex flex-col w-full max-w-md mx-auto bg-gray-900 rounded-[32px] p-4 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_48px_rgba(0,0,0,0.12)] border border-gray-700 hover:border-blue-700 transition-all duration-500 hover:-translate-y-3 hover:scale-105 h-auto min-h-[400px] gpu-accelerated overflow-hidden"
+        style={{ background: 'linear-gradient(145deg, #18181b, #27272a)' }} // Subtle gradient for beauty
       >
-        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[24px] bg-gray-200 shrink-0 mb-4">
+        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[24px] bg-gray-800 shrink-0 mb-4">
           {project.main_image ? (
             <img src={project.main_image} alt={project.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-300 flex items-center justify-center text-gray-500 font-bold text-xl">
+            <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center text-gray-400 font-bold text-xl">
               No Image
             </div>
           )}
           <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-            <div className="bg-white/95 backdrop-blur-lg rounded-full px-5 py-3 shadow-xl transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-3">
-              <span className="text-sm font-bold text-gray-900">View Details</span>
-              <ArrowUpRight size={16} className="text-gray-900" />
+            <div className="bg-gray-900/95 backdrop-blur-lg rounded-full px-5 py-3 shadow-xl transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-3">
+              <span className="text-sm font-bold text-gray-100">View Details</span>
+              <ArrowUpRight size={16} className="text-gray-100" />
             </div>
           </div>
         </div>
 
         <div className="flex flex-col flex-grow px-3 pt-2 pb-3">
           <div className="flex justify-between items-start mb-3">
-            <h3 className="text-xl font-display font-bold text-gray-900 leading-tight group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl font-display font-bold text-gray-100 leading-tight group-hover:text-blue-400 transition-colors">
               {project.name}
             </h3>
-            <span className="text-xs font-bold tracking-widest text-gray-500 uppercase bg-gray-100 px-3 py-1.5 rounded-full border border-gray-200">
+            <span className="text-xs font-bold tracking-widest text-gray-400 uppercase bg-gray-800 px-3 py-1.5 rounded-full border border-gray-700">
               {project.project_type}
             </span>
           </div>
 
-          <p className="text-gray-600 text-sm leading-relaxed mb-5 line-clamp-3">
+          <p className="text-gray-400 text-sm leading-relaxed mb-5 line-clamp-3">
             {project.description}
           </p>
 
@@ -102,7 +102,7 @@ const Works: React.FC = memo(() => {
         variants={headerVariants}
         className="text-center shrink-0 relative z-10 mt-4 mb-8 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 tracking-tight flex items-baseline justify-center gap-3">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-100 tracking-tight flex items-baseline justify-center gap-3">
           Selected
           <div className="relative inline-block">
             <span className="font-designer font-normal text-4xl md:text-5xl lg:text-6xl relative z-10">Works</span>
@@ -150,7 +150,7 @@ const Works: React.FC = memo(() => {
       >
         <a
           href="https://www.behance.net/e96d3821"
-          className="flex items-center gap-2 text-gray-900 text-sm md:text-base font-bold border-b border-black hover:text-blue-600 hover:border-blue-600 transition-colors pb-1"
+          className="flex items-center gap-2 text-gray-100 text-sm md:text-base font-bold border-b border-white hover:text-blue-400 hover:border-blue-400 transition-colors pb-1"
         >
           <FaBehanceSquare  className="w-5 h-5" />
           More on Behance

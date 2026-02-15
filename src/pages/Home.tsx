@@ -124,7 +124,7 @@ const Home: React.FC = () => {
       </div>
 
       {currentView === 'Home' && (
-        <div className="fixed bottom-0 left-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#F3F5FA] to-transparent pointer-events-none z-40" />
+        <div className="fixed bottom-0 left-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#111] to-transparent pointer-events-none z-40" />
       )}
     </AuroraBackground>
   );
