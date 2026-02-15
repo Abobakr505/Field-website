@@ -84,14 +84,14 @@ const SkillMeter = memo(({ percentage, color }: { percentage: number; color: str
   }, [percentage, count]);
 
   return (
-    <div className="w-full mt-auto pt-4">
+    <div className="w-full mt-auto pt-2">
       <div className="flex justify-between items-end mb-2">
         <span className="font-display text-[11px] font-bold text-gray-400 tracking-widest uppercase">Proficiency</span>
         <div className="flex items-baseline">
           <motion.span className="font-display text-2xl font-black text-gray-900 leading-none tracking-tight">
             {rounded}
           </motion.span>
-          <span className="text-sm font-bold text-gray-400 ml-0.5">%</span>
+          <span className="text-md font-bold font-display text-gray-400 ml-1">%</span>
         </div>
       </div>
 
@@ -171,7 +171,7 @@ const FramerVisual = memo(() => (
           animate={{
             width: ["36px", "100px", "36px"],
             height: ["36px", "12px", "36px"],
-            backgroundColor: ["#3b82f6", "#60a5fa", "#39a5cc"],
+            backgroundColor: ["#3b82f6", "#60a5fa", "#1f70ff"],
             borderRadius: ["8px", "6px", "8px"]
           }}
           transition={{
@@ -302,7 +302,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">AutoCAD</h3>
+            <h3 className="text-xl font-bold font-display text-gray-900 mb-0.5">AutoCAD</h3>
 
 
             <FigmaVisual />
@@ -322,7 +322,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">REVIT</h3>
+            <h3 className="text-xl font-bold font-display text-gray-900 mb-0.5">REVIT</h3>
 
 
             <FramerVisual />
@@ -342,7 +342,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">PHOTOSHOP</h3>
+            <h3 className="text-xl font-bold text-gray-900 font-display mb-0.5">PHOTOSHOP</h3>
 
             <IllustratorVisual />
           </div>
@@ -360,7 +360,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">3DSMAX</h3>
+            <h3 className="text-xl font-bold text-gray-900 font-display mb-0.5">3DSMAX</h3>
 
 
             <MaxVisual3D />
@@ -379,7 +379,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">TWINMOTION</h3>
+            <h3 className="text-xl font-bold font-display text-gray-900 mb-0.5">TWINMOTION</h3>
 
 
             <TwinVisual3D />
@@ -398,7 +398,7 @@ const Skills: React.FC = memo(() => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold text-gray-900 mb-0.5">MICROSOFT OFFICE</h3>
+            <h3 className="text-xl font-bold font-display text-gray-900 mb-0.5">MICROSOFT OFFICE</h3>
 
 
             <OfficeVisual />

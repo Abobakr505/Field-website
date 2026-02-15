@@ -74,7 +74,7 @@ const Card = memo(({ children, className, index = 0 }: { children?: React.ReactN
     viewport={{ once: true, margin: "-10% 0px" }}
     transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
     className={cn(
-      "relative flex flex-col p-5 rounded-[24px] bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden group h-full min-h-[280px] md:min-h-0 gpu-accelerated",
+      "relative flex flex-col p-5 rounded-[24px] bg-white border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-500 hover:shadow-[0_16px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden group h-full  md:min-h-0 gpu-accelerated",
       className
     )}
   >

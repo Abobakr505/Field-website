@@ -115,7 +115,7 @@ const ProjectDetails: React.FC = () => {
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-6xl font-bold mb-12 text-gray-900 tracking-tight"
+          className="text-4xl md:text-6xl font-bold mb-12 font-display text-gray-900 tracking-tight"
           variants={childVariants}
           initial="hidden"
           animate="visible"
@@ -159,8 +159,8 @@ const ProjectDetails: React.FC = () => {
             
             <motion.div variants={childVariants} className="space-y-8">
               <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/50" style={{ background: 'linear-gradient(145deg, #ffffff, #f0f4f8)' }}>
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full" />
+                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center font-display gap-2">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full " />
                   Project Info
                 </h2>
                 <div className="space-y-4 text-gray-600">
@@ -172,7 +172,7 @@ const ProjectDetails: React.FC = () => {
               </div>
               
               <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-xl border border-white/50" style={{ background: 'linear-gradient(145deg, #ffffff, #f0f4f8)' }}>
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+                <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center font-display gap-2">
                   <span className="w-2 h-2 bg-blue-500 rounded-full" />
                   Description
                 </h2>
@@ -189,8 +189,8 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-2">
-              <span className="w-2 h-2 bg-blue-500 rounded-full" />
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-display flex items-center gap-2">
+              <span className="w-2 h-2 bg-blue-500  rounded-full" />
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -214,7 +214,7 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-2">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center font-display gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full" />
               Technologies Used
             </h2>
@@ -239,7 +239,7 @@ const ProjectDetails: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-2">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 font-display flex items-center gap-2">
               <span className="w-2 h-2 bg-blue-500 rounded-full" />
               Gallery
             </h2>
@@ -266,7 +266,7 @@ const ProjectDetails: React.FC = () => {
             href={project.behance} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            className="inline-flex font-display items-center px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.05 }}

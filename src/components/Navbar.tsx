@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                         key={item.name}
                                         onClick={() => onNavigate(item.name)}
                                         className={`
-                                            relative px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 group/item
+                                            relative px-4  py-2  rounded-full text-sm font-semibold transition-all duration-300 flex items-center gap-2 group/item
                                             ${isActive ? 'text-blue-900' : 'text-gray-500 hover:text-gray-700'}
                                         `}
                                     >
@@ -141,7 +141,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                             strokeWidth={isActive ? 2.5 : 2}
                                             className={`relative z-10 transition-transform duration-300 ${isActive ? "text-blue-800 scale-110 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]" : "opacity-70 group-hover/item:scale-105"}`}
                                         />
-                                        <span className={`relative z-10 tracking-tight transition-colors duration-300 ${isActive ? "text-blue-950 font-bold" : ""}`}>
+                                        <span className={`relative font-display z-10 tracking-tight transition-colors duration-300 ${isActive ? "text-blue-950 font-bold" : ""}`}>
                                             {item.name}
                                         </span>
                                     </button>
@@ -160,7 +160,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                     <div className="relative group/contact">
                         <AnimatePresence>
                             {isContactOpen && (
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                                <div className="absolute inset-0 font-display flex items-center justify-center pointer-events-none z-0">
                                     {socialLinks.map((social, index) => {
                                         const startAngle = 160;
                                         const step = 45;
@@ -213,10 +213,10 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                                 className="shadow-[0_20px_48px_-12px_rgba(0,0,0,0.25)] hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.35)] transition-shadow duration-300 h-10 md:h-11 px-5 md:px-7"
                             >
                                 <span className="relative z-10 flex items-center gap-2 text-xs font-bold tracking-[0.05em] uppercase">
-                                    <span className="hidden sm:inline">
+                                    <span className="hidden sm:inline font-display">
                                         {isContactOpen ? 'Close' : 'Contact Me'}
                                     </span>
-                                    <span className="sm:hidden">
+                                    <span className="sm:hidden font-display">
                                         {isContactOpen ? 'Close' : 'Contact'}
                                     </span>
                                     <motion.div
