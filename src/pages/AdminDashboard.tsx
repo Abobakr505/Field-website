@@ -431,7 +431,7 @@ const AdminDashboard = () => {
           variants={headerVariants}
           className="flex flex-col sm:flex-row justify-between items-center mb-6 sm:mb-8 gap-4 sm:gap-8"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-100">Admin Dashboard</h2>
+          <h2 className="text-4xl sm:text-5xl font-display font-bold text-gray-100">Admin Dashboard</h2>
           <button onClick={handleLogout} className="px-4 sm:px-6 py-2 sm:py-3 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-lg">Logout</button>
         </motion.div>
         {error && <p className="text-red-500 mb-4 text-center sm:text-left">{error}</p>}
@@ -575,7 +575,7 @@ const AdminDashboard = () => {
           </div>
         </motion.form>
         <motion.h3 
-          className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-100"
+          className="text-2xl sm:text-3xl font-display font-bold mb-4 sm:mb-6 text-gray-100"
           initial="hidden"
           animate="visible"
           variants={headerVariants}

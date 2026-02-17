@@ -7,22 +7,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
-    name: "Golden View Compny",
+    name: "Mimar Emirates Compny",
     role: "Real Estate Company",
     feedback:
-      "The CGI of Together Project highlights contemporary architecture with strong visual appeal.",
+      "The level of realism and attention to detail exceeded our expectations — truly outstanding CGI work.",
   },
   {
-    name: "EBNY Compny",
+    name: "Reportage properties Compny",
     role: "Real Estate Company",
     feedback:
-      "The CGI of EBNY Project highlights contemporary architecture with strong visual",
+      "Professional, fast, and highly creative — the final visuals perfectly captured our project vision.",
   },
   {
-    name: "SAMCO Compny",
-    role: "Real Estate Company",
+    name: " Nara Studio Compny",
+    role: "CGI Company",
     feedback:
-      "The CGI of JAZURA Project presents a clean, modern design with market impact.",
+      "The renders brought our concept to life and significantly enhanced our marketing presentation.",
   },
 ];
 
