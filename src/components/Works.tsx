@@ -84,15 +84,25 @@ ProjectCard.displayName = 'ProjectCard';
 
 const Works: React.FC = memo(() => {
   const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState(false);
+  
+useEffect(() => {
+  const fetchProjects = async () => {
+    setLoading(true);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const { data, error } = await supabase.from('projects').select('*');
-      if (error) console.error(error);
-      else setProjects(data || []);
-    };
-    fetchProjects();
-  }, []);
+    const { data, error } = await supabase
+      .from('projects')
+      .select('*');
+
+    if (error) console.error(error);
+    else setProjects(data || []);
+
+    setLoading(false);
+  };
+
+  fetchProjects();
+}, []);
+
 
   return (
     <div className="w-full min-h-full flex flex-col items-center p-6 md:p-8 pb-24 overflow-visible"> {/* Added background gradient for beauty */}
@@ -136,9 +146,21 @@ const Works: React.FC = memo(() => {
           animate="visible"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 w-full h-auto"
         >
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+      {loading ? (
+        <div className="col-span-full flex flex-col items-center justify-center py-20 gap-4">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-gray-400 text-sm">Loading Projects...</p>
+        </div>
+      ) : projects.length === 0 ? (
+        <div className="col-span-full text-center text-gray-400 py-20">
+          No projects found.
+        </div>
+      ) : (
+        projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))
+      )}
+
         </motion.div>
       </div>
 

@@ -18,6 +18,12 @@ const testimonials = [
     feedback:
       "The CGI of EBNY Project highlights contemporary architecture with strong visual",
   },
+  {
+    name: "SAMCO Compny",
+    role: "Real Estate Company",
+    feedback:
+      "The CGI of JAZURA Project presents a clean, modern design with market impact.",
+  },
 ];
 
 

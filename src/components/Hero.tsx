@@ -177,7 +177,7 @@ const Hero: React.FC<HeroProps> = memo(({ onNavigate }) => {
                                             stroke="#fcdd00"
                                             strokeWidth="20"
                                             strokeLinecap="round"
-                                            className="opacity-70"
+                                            className="opacity-80"
                                             style={{ strokeDasharray: 1000, strokeDashoffset: 1000 }}
                                         />
                                     </svg>

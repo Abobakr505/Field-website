@@ -645,13 +645,13 @@ const AdminDashboard = () => {
               <div className="flex justify-end gap-4">
                 <button
                   onClick={() => setShowDeleteModal(false)}
-                  className="px-4 py-2 bg-zinc-800 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md"
+                  className="px-4 py-2 bg-black rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors duration-300 shadow-md"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleDelete}
-                  className="px-4 py-2 bg-zinc-800 rounded-lg font-bold hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md"
+                  className="px-4 py-2 bg-black rounded-lg font-bold hover:bg-red-600 hover:text-white transition-colors duration-300 shadow-md"
                 >
                   Delete
                 </button>
