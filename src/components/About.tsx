@@ -127,7 +127,7 @@ const About: React.FC = memo(() => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-indigo-900/50 md:hidden" />
 
             <img
-              src="/about.png"
+              src="/about.webp"
               alt="Portrait"
               loading="eager"
               decoding="async"

@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = memo(({ currentView, onNavigate }) => {
                             onClick={handleHomeClick}
                         >
                             <div className="w-8 h-8 md:w-9 md:h-9 flex items-center justify-center transition-transform duration-500 group-hover:rotate-6">
-                                <img className="" src="/favicon.png" alt="" />
+                                <img className="" src="/favicon.webp" alt="" />
                             </div>
                             {/* <span className="font-designer text-xl md:text-2xl tracking-tighter text-gray-100 hidden sm:block opacity-90 group-hover:opacity-100 transition-opacity">Ahmed </span> */}
                         </div>

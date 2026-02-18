@@ -245,7 +245,7 @@ A reliable and precise professional driven by passion, backed by solid experienc
                             <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#111] via-[#1F2937]/80 to-transparent opacity-[0.7] z-30"></div>
 
                             <img
-                                src="/home.png"
+                                src="/home.webp"
                                 alt="Portrait"
                                 loading="eager"
                                 decoding="async"
