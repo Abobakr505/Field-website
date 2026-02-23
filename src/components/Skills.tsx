@@ -202,7 +202,7 @@ const MaxVisual3D = memo(() => (
       {[0, 1, 2, 3].map((i) => (
         <motion.div
           key={i}
-          className="w-8 h-8 bg-gradient-to-br from-blue-900 to-blue-600 rounded-full shadow-lg"
+          className="w-8 h-8 bg-gradient-to-br from-blue-900 to-[#39a5cc] rounded-full shadow-lg"
           animate={{
             scale: [1, 1.5, 1],
             y: [0, -10, 0],
