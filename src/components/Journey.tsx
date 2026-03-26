@@ -223,7 +223,7 @@ const Journey: React.FC = memo(() => {
         </div>
       </div>
 
-      {/* Courses Section - Kept grid layout, with ProgressBar for completion feel */}
+      {/* Courses Section - Kept grid layout, with ProgressBar for completion feel
       <div className="w-full max-w-[1200px] mb-12">
         <h3 className="text-2xl font-bold text-gray-100 mb-6 text-left font-designer flex flex-row items-center">
           <Asterisk className="w-10 h-10 text-[#fcdd00]" /> My COURSES
@@ -308,14 +308,14 @@ const Journey: React.FC = memo(() => {
             <ProgressBar percentage={100} color="bg-teal-500" />
           </Card>
         </div>
-      </div>
+      </div> */}
 
       {/* Experience Section - Enhanced Timeline with smoother animations */}
       <div className="w-full max-w-[1200px]">
         <h3 className="text-2xl font-bold text-gray-100 mb-6 text-left font-designer flex flex-row items-center">
           <Asterisk className="w-10 h-10 text-[#fcdd00]" /> My EXPERIENCE
         </h3>
-        <div className="relative flex flex-col items-center">
+        <div className="relative flex flex-col-reverse items-center">
           {/* Timeline Line - Softer gradient with subtle glow */}
           <motion.div
             className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-indigo-800 to-indigo-500 h-full rounded-full overflow-hidden shadow-[0_0_10px_rgba(79,70,229,0.3)]"
@@ -406,7 +406,7 @@ const Journey: React.FC = memo(() => {
             </div>
             <ProgressBar percentage={100} color="bg-indigo-500" />
           </ExperienceCard>
-                    <ExperienceCard side="right" index={1} year="Present">
+            <ExperienceCard side="right" index={1} year="Present">
             <div>
               <div className="flex justify-between items-start mb-3">
                 <div className="w-12 h-12 bg-indigo-900/50 rounded-xl flex items-center justify-center border border-indigo-900 group-hover:bg-indigo-900 group-hover:scale-105 transition-all">
