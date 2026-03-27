@@ -1,7 +1,7 @@
 import React, { memo, useRef } from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 import { cn } from '../lib/utils';
-import { MapPin, Calendar, Phone, Asterisk } from 'lucide-react';
+import { MapPin, Calendar, Phone, Asterisk, BriefcaseBusiness } from 'lucide-react';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -87,7 +87,7 @@ const About: React.FC = memo(() => {
           </motion.div>
 
           {/* الإحصائيات */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 md:gap-6  pt-8 md:pt-8 border-t border-gray-700 w-full">
+          <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4 md:gap-6  pt-8 md:pt-8 border-t border-gray-700 w-full">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-blue-900/50 rounded-full text-blue-400">
                 <Calendar size={18} />
@@ -117,12 +117,21 @@ const About: React.FC = memo(() => {
                 <p className="font-bold text-gray-100 text-sm">+201090304760</p>
               </div>
             </div>
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-red-900/50 rounded-full text-red-400">
+                <BriefcaseBusiness size={18} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Projects </p>
+                <p className="font-bold text-gray-100 text-sm">100+ Project </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* قسم Design Philosophy */}
           <motion.div 
             variants={itemVariants} 
-            className="mt-12 pt-8 pb-12 border-t border-gray-700 w-full"
+            className="mt-12 pt-8 pb-12  border-t border-gray-700 w-full"
           >
             <h3 className="text-2xl font-semibold font-designer text-gray-100 mb-6 flex items-center gap-3">
               <span className="text-yellow-400">

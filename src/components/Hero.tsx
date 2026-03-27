@@ -2,11 +2,27 @@ import React, { useEffect, useRef, memo } from 'react';
 import { ArrowRight, Download, Mail } from 'lucide-react';
 import { ShimmerButton } from './ShimmerButton';
 import { motion } from 'framer-motion';
+import Cards from './Cards';
 
 interface HeroProps {
     onNavigate: (view: string) => void;
 }
 
+const images = [
+  "https://dpvzlbziklelthbohpth.supabase.co/storage/v1/object/public/project-images/00365856-129b-4738-a951-166407ea104e.png",
+  "https://dpvzlbziklelthbohpth.supabase.co/storage/v1/object/public/project-images/9f1015f3-7038-4ad5-8a78-7ad875950747.png",
+  "https://dpvzlbziklelthbohpth.supabase.co/storage/v1/object/public/project-images/c9850a94-ff28-4e10-8963-54dbd7bb385e.png",
+  "https://dpvzlbziklelthbohpth.supabase.co/storage/v1/object/public/project-images/2a7669be-a7f3-449d-8c6b-7ed7776b7138.png",
+  "https://dpvzlbziklelthbohpth.supabase.co/storage/v1/object/public/project-images/ad37191f-ac0b-4d74-9f8c-8f347305718e.png"
+];
+
+const transformStyles = [
+  "rotate(5deg) translate(-150px)",
+  "rotate(0deg) translate(-70px)",
+  "rotate(-5deg)",
+  "rotate(5deg) translate(70px)",
+  "rotate(-5deg) translate(150px)"
+];
 const WaveIcon = memo(() => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -241,16 +257,27 @@ A reliable and precise professional driven by passion, backed by solid experienc
                     className="flex-1 w-full relative min-h-0 flex items-end justify-center"
                 >
                     <div className="relative w-full max-w-[1400px] mx-auto h-full flex items-end justify-center">
-                        <div className="relative z-10 h-full w-full flex items-end justify-center pb-0">
-                            <div className="absolute bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#111] via-[#1F2937]/80 to-transparent opacity-[0.7] z-30"></div>
+                        <div className="relative z-10 h-full w-full flex items-end justify-center pb-16 md:pb-0">
+                            <div className="absolute  bottom-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#111] via-[#1F2937]/80 to-transparent opacity-[0.7] z-30"></div>
 
-                            <img
+                            <Cards
+                            className="custom-bounceCards"
+                            images={images}
+                            containerWidth={400}
+                            containerHeight={200}
+                            animationDelay={1}
+                            animationStagger={0.08} 
+                            easeType="elastic.out(1, 0.5)"
+                            transformStyles={transformStyles}
+                            enableHover={false}
+                            />
+                            {/* <img
                                 src="/home.webp"
                                 alt="Portrait"
                                 loading="eager"
                                 decoding="async"
                                 className="object-cover object-bottom h-[45vh] sm:h-[80vh] md:h-[140%] w-auto max-w-full relative z-10 filter drop-shadow-2xl mb-6 md:-mb-8 pointer-events-none"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </motion.div>
