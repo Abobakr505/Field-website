@@ -263,8 +263,8 @@ A reliable and precise professional driven by passion, backed by solid experienc
                             <Cards
                             className="custom-bounceCards"
                             images={images}
-                            containerWidth={400}
-                            containerHeight={200}
+                            containerWidth={500}
+                            containerHeight={250}
                             animationDelay={1}
                             animationStagger={0.08} 
                             easeType="elastic.out(1, 0.5)"

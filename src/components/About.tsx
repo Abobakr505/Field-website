@@ -28,7 +28,7 @@ const About: React.FC = memo(() => {
   const imageY = useTransform(scrollYProgress, [0, 1], [80, -80]); // حركة خفيفة للأعلى والأسفل مع السكرول
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center justify-center p-8 md:p-0 overflow-visible">
+    <div className="w-full min-h-screen flex flex-col items-center justify-center p-8  md:p-6 overflow-visible">
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 lg:gap-16 items-center">
         {/* النص - الجانب الأيسر */}
         <motion.div
